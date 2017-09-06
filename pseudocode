@@ -1,0 +1,8 @@
+1. In orm.js, create methods that will execute the necessary MySQL commands in the controllers. These methods will be used to retrieve and store data in the db:
+selectAll()
+
+insertOne()
+
+updateOne()
+
+2. In burger.js, create code that will call the ORM functions using burger specific input for the ORM.
