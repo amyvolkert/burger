@@ -28,7 +28,7 @@ app.set('view engine', 'handlebars');
 
 
 // Import express routes and give the server access to them
-var routes = require("./controllers/catsController.js");
+var routes = require("./controllers/burgers_controller.js");
 
 app.use("/", routes);
 
