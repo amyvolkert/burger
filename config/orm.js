@@ -1,8 +1,31 @@
+// All of the MySQL code follows to collect data; the code will be modified using models/cat.js
+
 // Import the MySQL connection located in connection.js
 var connection = require("../config/connection.js");
 
-// Function one of two for SQL syntax
-function displayBurger(num)
+// One of two helper function for SQL syntax
+function printQuestionMarks(num) {
+  var arr = [];
+
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
+
+  return arr.toString();
+}
+
+// Two of two helper function for SQL syntax
+function objToSql(ob) {
+  var arr = [];
+
+  for (var key in ob) {
+    if (Object.hasOwnProperty.call(ob, key)) {
+      arr.push(key + "=" + ob[key]);
+    }
+  }
+
+  return arr.toString();
+}
 
 // Object Relational Mapper (ORM) for all of the SQL statement functions
 // Select ALL. The cb var represents the funtion being passed from server.js
@@ -35,7 +58,6 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -52,21 +74,21 @@ var orm = {
 
       cb(result);
     });
-  },
-  delete: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += condition;
+  };
 
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
+  // delete: function(table, condition, cb) {
+  //   var queryString = "DELETE FROM " + table;
+  //   queryString += " WHERE ";
+  //   queryString += condition;
+  //
+  //   connection.query(queryString, function(err, result) {
+  //     if (err) {
+  //       throw err;
+  //     }
+  //
+  //     cb(result);
+  //   });
+  // };
 
-      cb(result);
-    });
-  }
-};
-
-// Export the orm object
+// Export the orm object for the model
 module.exports = orm;

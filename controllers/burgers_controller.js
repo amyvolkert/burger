@@ -1,5 +1,4 @@
 // Require npm package express to create the router
-// const?
 var express = require('express');
 
 // Create the router for the application
@@ -8,7 +7,7 @@ var router = express.Router();
 // Import the model burger.js to use its db functions
 var burger = require('../models/burger.js');
 
-// Create all routes and set up logic within the routes where needed
+// Create all of the routes and set up logic within the routes where needed
 // ta does This route gets all the data
 router.get("/", function(req, res) {
   burger.all(function(data) {
@@ -51,10 +50,6 @@ router.delete("/:id", function(req, res) {
     res.redirect("/");
   });
 });
-
-
-
-
 
 // Export route for server.js to use.
 module.exports = router;
