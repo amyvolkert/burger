@@ -1,26 +1,26 @@
-<!-- Handlebars code -->
+<!-- Passing data into index.handlebars -->
 <!-- Loop through the data -->
 <div class="container">
-  <!-- Row one of one -->
+  <!-- Row one of ... -->
   <div class="row">
-    <!-- Column one of two -->
+    <!-- Row one, column one -->
     <div class="col-md-12" id="heading">
     <h1>The Return of the Gourmet Burger</h1>
     </div>
-    <!-- Row one, column two -->
-    <div class="col-md-12" class="task">
-        <!-- Column two, first row. Post the id and burger name in a pre-formatted text-->
+
+      <div class="col-md-6" class="task">
         <div class="row">
           {{#each data}}
             {{#unless this.devoured}}
-          <div class="col-md-12 text left">
+          <!-- Column    -->
+          <div class="col-md-6">
             <pre>{{this.id}}.{{this.burger_name}}</pre>
           </div>
         <!-- Create a button that will send the this.id back to the server, unless devoured is 1 -->
-        <div class="col-12-md text left">
-          <form action="/burgers/update?_method=PUT" class="button-size">
+        <div class="col-12-3">
+          <form method="POST" action="burgers/update?_method=PUT" class="button-size">
             <!-- Hiding the id from the user -->
-            <input type="hidden" name="id" type="text" value={{this.id}}>
+            <input type="hidden" name="burger_id" type="text" value={{this.id}}>
             <br>
             <!-- Send the data to the server -->
             <button type="submit" class="btn btn-default">DEVOUR IT!</button>
@@ -31,4 +31,5 @@
         </div>
       </div>
     </div>
+<!-- Container ends -->
 </div>

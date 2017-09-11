@@ -11,6 +11,13 @@ var orm = {
       if(err) throw err;
       cb(res)
     })
+  },
+  // orm.update method
+  update: function(tableInput, condition, cb) {
+    connection.query("UPDATE " + tableInput + "SET devoured=1 WHERE id=" + condition + ";", function(err, res){
+      if(err) throw err;
+      cb(res);
+    })
   }
 }
 
