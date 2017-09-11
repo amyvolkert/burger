@@ -15,7 +15,7 @@ app.use(express.static(__dirname + "/public"));
 // Parse the text as URL encoded data
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Override with POST having ?_method=TA move
+// Override with POST method having ?_method
 app.use(methodOverride("_method"));
 
 // Set handlebars as the default templating 'engine' of express and envoke exphbs object

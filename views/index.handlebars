@@ -1,7 +1,7 @@
 <!-- Passing data into index.handlebars -->
 <!-- Loop through the data -->
 <div class="container">
-  <!-- Row one of ... -->
+  <!-- Row one of one -->
   <div class="row">
     <!-- Row one, column one -->
     <div class="col-md-12" id="heading">
@@ -11,7 +11,7 @@
         <div class="row">
           {{#each data}}
             {{#unless this.devoured}}
-          <!-- Column    -->
+          <!-- Column one. Posting id and burger name -->
           <div class="col-md-6">
             <pre>{{this.id}}.{{this.burger_name}}</pre>
           </div>
@@ -21,13 +21,22 @@
             <!-- Hiding the id from the user -->
             <input type="hidden" name="burger_id" type="text" value={{this.id}}>
             <br>
-            <!-- Send the data to the server -->
+            <!-- Send the this.id to the server -->
             <button type="submit" class="btn btn-default">DEVOUR IT!</button>
           </form>
         </div>
         {{/unless}}
         {{/each}}
         </div>
+      </div>
+
+      <!-- Move burger id and name  -->
+      <div class="col-md-6" class="task">
+        {{#each burger_data}}
+          {{#if this.devoured}}
+            <input class="form-control" type="text" placeholder="{{this.id}}.{{this.burger_name}}" readonly>
+          {{/if}}
+        {{/each}}
       </div>
     </div>
 <!-- Container ends -->

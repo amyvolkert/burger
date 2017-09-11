@@ -1,10 +1,10 @@
-// All of the MySQL code follows to collect data; the code will be modified using models/cat.js
+// All of the MySQL code follows to collect data; the code will be modified using models/burger_model.js
 
 // Import the MySQL connection located in connection.js
 var connection = require("./connection.js");
 
 // Object Relational Mapper (ORM) for all of the SQL statement functions
-// orm.all method. The cb var represents the funtion being passed from server.js
+// orm.all method. The cb var represents the function being passed from server.js
 var orm = {
   all: function(tableInput, cb) {
     connection.query("SELECT * FROM " + tableInput + ";", function(err, result){
