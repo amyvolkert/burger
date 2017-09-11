@@ -14,7 +14,7 @@ var orm = {
   },
   // orm.update method
   update: function(tableInput, condition, cb) {
-    connection.query("UPDATE " + tableInput + "SET devoured=1 WHERE id=" + condition + ";", function(err, result){
+    connection.query("UPDATE " + tableInput + " SET devoured = 1 WHERE id = " + condition + ";", function(err, result){
       if(err) throw err;
       cb(result);
     })
