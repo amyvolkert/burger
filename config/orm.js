@@ -7,16 +7,16 @@ var connection = require("./connection.js");
 // orm.all method. The cb var represents the funtion being passed from server.js
 var orm = {
   all: function(tableInput, cb) {
-    connection.query("SELECT * FROM " + tableInput + ";", function(err, res){
+    connection.query("SELECT * FROM " + tableInput + ";", function(err, result){
       if(err) throw err;
-      cb(res)
+      cb(result)
     })
   },
   // orm.update method
   update: function(tableInput, condition, cb) {
-    connection.query("UPDATE " + tableInput + "SET devoured=1 WHERE id=" + condition + ";", function(err, res){
+    connection.query("UPDATE " + tableInput + "SET devoured=1 WHERE id=" + condition + ";", function(err, result){
       if(err) throw err;
-      cb(res);
+      cb(result);
     })
   }
 }

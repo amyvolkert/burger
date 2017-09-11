@@ -7,7 +7,6 @@
     <div class="col-md-12" id="heading">
     <h1>The Return of the Gourmet Burger</h1>
     </div>
-
       <div class="col-md-6" class="task">
         <div class="row">
           {{#each data}}
@@ -18,7 +17,7 @@
           </div>
         <!-- Create a button that will send the this.id back to the server, unless devoured is 1 -->
         <div class="col-12-3">
-          <form method="POST" action="burgers/update?_method=PUT" class="button-size">
+          <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
             <!-- Hiding the id from the user -->
             <input type="hidden" name="burger_id" type="text" value={{this.id}}>
             <br>
