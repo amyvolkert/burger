@@ -1,7 +1,7 @@
 <!-- Passing data into index.handlebars -->
 <!-- Loop through the data -->
 <div class="container">
-  <!-- Row one of one -->
+  <!-- Row one of two -->
   <div class="row">
     <!-- Row one, column one -->
     <div class="col-md-12" id="heading">
@@ -32,12 +32,27 @@
 
       <!-- Move burger id and name  -->
       <div class="col-md-6" class="task">
-        {{#each burger_data}}
+        {{#each data}}
+          <!-- If devoured is true -->
           {{#if this.devoured}}
-            <input class="form-control" type="text" placeholder="{{this.id}}.{{this.burger_name}}" readonly>
+            <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
           {{/if}}
         {{/each}}
       </div>
     </div>
+<!-- Container ends -->
+</div>
+
+<!-- Form to enter burger -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 enter-section">
+      <form action="/burgers/create" method="POST">
+        <input type="text" name="burger_name" class="form-control" value="" id="enter_text">
+        <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
+      </form>
+      <p>What burger would you like to devour? Enter it here!</p>
+    </div>
+  </div>
 <!-- Container ends -->
 </div>

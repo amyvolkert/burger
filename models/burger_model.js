@@ -12,8 +12,11 @@ var burger = {
 
   update: function(id,cb) {
     orm.update('burgers',id,cb);
+  },
+
+  create: function(name,cb) {
+    orm.create('burgers', name, cb);
   }
 }
-
 // Export the database functions for the controller
 module.exports = burger;

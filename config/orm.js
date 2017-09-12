@@ -18,8 +18,15 @@ var orm = {
       if(err) throw err;
       cb(result);
     })
+  },
+
+// orm.create.method
+  create: function(tableInput, val, cb) {
+    connection.query('INSERT INTO ' + tableInput + " (burger_name) VALUES ('"+val+"');", function(err, result){
+      if(err) throw err;
+      cb(result);
+    })
   }
 }
-
 // Export the orm object for the model burger_model.js
 module.exports = orm;

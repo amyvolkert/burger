@@ -2,6 +2,7 @@
 
 USE amyvolkert;
 
+DROP TABLE IF EXISTS burgers;
 -- Create the table
 CREATE TABLE burgers (
 id INTEGER(10) AUTO_INCREMENT NOT NULL,
