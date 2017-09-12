@@ -1,6 +1,6 @@
--- Create burgers_db and specify it for use
-CREATE DATABASE burgers_db;
-USE burgers_db;
+-- Specifying amyvolkert database at codeflink.net
+
+USE amyvolkert;
 
 -- Create the table
 CREATE TABLE burgers (
