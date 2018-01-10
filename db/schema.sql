@@ -1,6 +1,6 @@
 -- Specifying amyvolkert database at codeflink.net
 
-USE amyvolkert;
+USE burgers_db;
 
 DROP TABLE IF EXISTS burgers;
 -- Create the table

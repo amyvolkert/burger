@@ -1,4 +1,4 @@
-USE amyvolkert;
+USE burgers_db;
 
 -- Insert five records into burgers table
 INSERT INTO burgers (burger_name) VALUES ('Truffle Burger');
